@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from common.forms import UserForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -21,3 +22,4 @@ def signup(request):
     else:
         form = UserForm()
     return render(request, 'common/signup.html', {'form': form})
+
